@@ -1,0 +1,29 @@
+{
+    "name": "winter",
+    "version": "0.1.0",
+    "main": "./build/electron/main.js",
+    "scripts": {
+      "dump": "dump-stlite-desktop-artifacts",
+      "serve": "NODE_ENV=\"production\" electron .",
+      "servewindows": "electron .",
+      "pack": "electron-builder --dir",
+      "dist": "electron-builder",
+      "postinstall": "electron-builder install-app-deps"
+    },
+    "build": {
+      "files": ["build/**/*"],
+      "directories": {
+        "buildResources": "assets"
+      },
+      "win": {
+        "target": "portable",
+        "icon": "assets/icon.ico"
+      }
+    },
+    "devDependencies": {
+      "@stlite/desktop": "^0.46.1",
+      "cross-env": "^7.0.3",
+      "electron": "^28.2.1",
+      "electron-builder": "^24.9.1"
+    }
+  }
